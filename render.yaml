@@ -1,0 +1,31 @@
+services:
+- type: web
+  name: nodeRender
+  plan: free
+  runtime: node
+  region: frankfurt
+  branch: main
+  buildCommand: npm install
+  startCommand: npm run install
+  repo: https://github.com/Spykoninho/nodeRenderCloud
+  envVars:
+  - key: DB_NAME
+    fromDatabase:
+      -name: nodeRenderDB
+      -property: connectionString
+  - key: USER_NAME
+    fromDatabase:
+      -name: nodeRenderDB
+      -property: connectionString
+  - key: USER_PWD
+    fromDatabase:
+      -name: nodeRenderDB
+      -property: connectionString
+  - key: DB_HOST
+    fromDatabase:
+      -name: nodeRenderDB
+      -property: connectionString
+databases:
+- name: nodeRenderDB
+  region: frankfurt
+  plan: free
