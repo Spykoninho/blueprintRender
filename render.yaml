@@ -11,8 +11,8 @@ services:
   envVars:
   - key: DB_CONNECTION_STRING
     fromDatabase:
-      -name: nodeRenderDB
-      -property: connectionString
+    -name: nodeRenderDB
+    -property: connectionString
 databases:
 - name: nodeRenderDB
   region: frankfurt
