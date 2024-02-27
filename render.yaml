@@ -9,19 +9,7 @@ services:
   startCommand: npm run install
   repo: https://github.com/Spykoninho/nodeRenderCloud
   envVars:
-  - key: DB_NAME
-    fromDatabase:
-      -name: nodeRenderDB
-      -property: connectionString
-  - key: USER_NAME
-    fromDatabase:
-      -name: nodeRenderDB
-      -property: connectionString
-  - key: USER_PWD
-    fromDatabase:
-      -name: nodeRenderDB
-      -property: connectionString
-  - key: DB_HOST
+  - key: DB_CONNECTION_STRING
     fromDatabase:
       -name: nodeRenderDB
       -property: connectionString
